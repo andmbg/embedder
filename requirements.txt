@@ -1,0 +1,7 @@
+torch
+flask
+gunicorn
+python-dotenv
+pandas
+transformers
+sentence-transformers
