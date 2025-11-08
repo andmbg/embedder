@@ -15,8 +15,6 @@ from src.logger import logger
 # Load environment variables from .env file
 load_dotenv(find_dotenv())
 
-logger.info(f"HF_TOKEN: {os.getenv('HF_TOKEN')}")
-
 app = Flask(__name__)
 
 
@@ -101,8 +99,8 @@ def health():
 
 
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 19000))
-    host = os.getenv("HOST", "0.0.0.0")
+    port = 19000
+    host = "0.0.0.0"
 
-    logger.info(f"Starting Embedder service on {host}:{port}")
-    app.run(host=host, port=port, debug=True, threaded=True)
+    logger.info("Starting Embedder service.")
+    app.run(host=host, port=port, debug=False, threaded=True)
